@@ -24,7 +24,7 @@ export class CommentsComponent {
             that.comments=res;
         })
     }
-    page()
+    
     
 
 }
