@@ -1,0 +1,8 @@
+<div class="container w-50  my-3">
+    <accordion [isAnimated]="true" class="text-center bg" >
+        <accordion-group heading="{{case.id}}" *ngFor="let case of users" class="my-3">
+          {{case.body}} : This content is straight in the template.
+        </accordion-group>
+    </accordion>
+</div>
+

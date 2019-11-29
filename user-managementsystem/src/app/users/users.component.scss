@@ -1,0 +1,54 @@
+.box{
+    float: right;
+}
+li{
+    list-style: none;
+}
+tr:nth-child(even){
+    
+    background:aquamarine;
+}
+tr{
+    cursor: pointer;
+}
+.left {
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    margin-right: 1.5em;
+  }
+  
+  .left:after {
+    content: '';
+      display: inline-block;
+    margin-top: 1.05em;
+    margin-left: 0.6em;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.5em solid #333;
+    border-right: 0.5em solid #333;
+    -moz-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  
+  .right {
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    margin-left: 1.5em;
+  }
+  
+  .right:after {
+    content: '';
+      display: inline-block;
+    margin-top: 1.05em;
+    margin-left: -0.6em;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.5em solid #333;
+    border-right: 0.5em solid #333;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
