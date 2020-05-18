@@ -19,9 +19,11 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('student', student)
         this.router.navigate(['users'])
     }
-    
+     
+    else{
+      localStorage.removeItem('token');
     }
-   
+  }
 }
 
 

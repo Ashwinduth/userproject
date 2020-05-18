@@ -1,5 +1,4 @@
-import { PostService } from './post.service';
-import { Apiservice } from './../api.service';
+import { PostsService } from './posts.service';
 import { Component } from "@angular/core";
 
 @Component({
@@ -11,7 +10,7 @@ export class PostsComponent{
 
     public users:any;
   
-    constructor(private data:PostService){
+    constructor(private data:PostsService){
         this.getusers();       
     }
     getusers(){

@@ -12,7 +12,7 @@ export class Guardservice implements CanActivate{
             return true
         }
         else{
-            this.router.navigate(['users']);
+            this.router.navigate(['login']);
             return false
         }
     }

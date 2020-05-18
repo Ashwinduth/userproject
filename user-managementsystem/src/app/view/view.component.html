@@ -1,0 +1,21 @@
+<div class="container w-50 my-5">
+    <div class="card bg-secondary text-center">
+        <div class="card-header text-white">
+            <h1>{{ user.name }}</h1>
+        </div>
+        <div class="card-body ">
+            <div class="card-text">
+                <h6 class="text-white">ID :{{ user.id }}</h6>
+                <h6 class="text-white">USERNAME :{{ user.username }}</h6>
+                <h6 class="text-white">EMAIL :{{ user.email }}</h6>
+                <h6 class="text-white">CONTACT :{{ user.phone}}</h6>
+                <h6 class="text-white">CITY :{{ user.address.city }}</h6>
+                <h6 class="text-info">WEBSITE :{{ user .website }}</h6>
+            </div>
+
+        </div>
+        <div class=" card-link d-flex p-3 justify-content-end">
+            <button class="btn btn-danger" (click)="gotouser()">close</button>
+        </div>
+    </div>
+</div>

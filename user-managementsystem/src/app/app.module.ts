@@ -3,18 +3,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
+import { CommonModule } from '@angular/common'
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router'
+import { RouterModule,ActivatedRoute } from '@angular/router'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { PopoverModule } from 'ngx-bootstrap/popover';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ViewComponent } from './view/view.component';
+
 
 const Routes=[
   {
@@ -31,7 +30,11 @@ const Routes=[
     path:'user-edit/:id',
     component:UserEditComponent
   },
-  
+  {
+    path:'view/:id',
+    component:ViewComponent
+
+  },
   {
     path:'users',
     loadChildren:'./users/users.module#UsersModule',
@@ -40,6 +43,7 @@ const Routes=[
   {
     path:'posts',
     loadChildren:'./posts/posts.module#PostsModule'
+  
   },
   {
     path:'comments',
@@ -53,20 +57,19 @@ const Routes=[
     HeaderComponent,
     NavbarComponent,
     LoginComponent,
-    UserEditComponent 
+    UserEditComponent,
+    ViewComponent 
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    TooltipModule.forRoot(),
     HttpClientModule,
-    PopoverModule.forRoot(),
-    ModalModule.forRoot(),
     AccordionModule.forRoot(),
     BrowserAnimationsModule,
-    PaginationModule.forRoot(),
-    RouterModule.forRoot(Routes)
+    
+    RouterModule.forRoot(Routes,{})
   ],
   providers: [],
   bootstrap: [AppComponent]

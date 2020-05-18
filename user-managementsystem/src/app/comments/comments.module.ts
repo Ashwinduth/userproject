@@ -1,30 +1,31 @@
-import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { FormsModule } from '@angular/forms';
-import { CommentsComponent } from './comments.component';
-
-import { NgSelectModule } from '@ng-select/ng-select';
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'
+import { CommentsComponent } from './comments.component';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-const Routes=[
+const ROUTES = [
   {
-    path:'',
-    pathMatch:'full',
-    component:CommentsComponent
+    path: '',
+    pathMatch: 'full',
+    component: CommentsComponent
   }
 ]
-
 @NgModule({
+  imports: [
+    RouterModule.forChild(ROUTES),
+    CommonModule,
+    PaginationModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
+
+
+  ],
   declarations: [
     CommentsComponent
-  ],
-  imports: [
-    CommonModule,
-    NgSelectModule,
-    FormsModule,
-    PaginationModule,
-    RouterModule.forChild(Routes)
   ]
 })
-export class CommentsModule { }
+export class CommentsModule {
+
+}

@@ -22,9 +22,9 @@ const ROUTES=[
   imports: [
     CommonModule,
     NgSelectModule,
-    TooltipModule,
-    ModalModule,
-    PopoverModule,
+    TooltipModule.forRoot(),
+    ModalModule.forRoot(),
+    PopoverModule.forRoot(),
     RouterModule.forChild(ROUTES)
   ]
 })

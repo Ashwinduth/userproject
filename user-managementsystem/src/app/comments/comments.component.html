@@ -1,3 +1,26 @@
-<pagination (click)="page()" class="d-flex justify-content-center my-2 bg-secondary " [totalItems]="bigTotalItems"  [(ngModel)]="bigCurrentPage" [maxSize]="maxSize">
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let comments of pageresponse">
+                <td>{{comments.id}}</td>
+                <td>{{comments.name}}</td>
+                <td>{{comments.body}}</td>
+            </tr>
+        </tbody>
+    </table>
 
-</pagination>
+
+    <div class="my-5">
+        <pagination [boundaryLinks]="true" [totalItems]="45" previousText="&lsaquo;" nextText="&rsaquo;"
+            firstText="&laquo;" lastText="&raquo;" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)">
+
+        </pagination>
+    </div>
+</div>

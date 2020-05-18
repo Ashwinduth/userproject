@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class UserEditComponent implements OnInit {
   public id:any;
   public users:any;
-  public store={
+  public userdatastore={
     
   };
 
@@ -26,7 +26,7 @@ export class UserEditComponent implements OnInit {
     })
   }
   storeuserinfo(){
-    console.log(this.store)
+    console.log(this.userdatastore)
 
   }
   eraseuserinfo(){

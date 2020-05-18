@@ -1,5 +1,5 @@
 import { Apiservice } from './../api.service';
-import { Component,TemplateRef  } from '@angular/core';
+import { Component,TemplateRef ,OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
@@ -8,20 +8,20 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
     templateUrl:'users.component.html',
     styleUrls:['users.component.scss']
 })
-export class UsersComponent {
-    public users:any;
-    private info;
+export class UsersComponent implements OnInit{
+    public users;
+    public info;
     modalRef: BsModalRef;
     
     constructor(private router:Router, private data:Apiservice,private modalService:BsModalService){
-        this.users = Array(10).fill(0);
         this.getusers();       
     }
-    edituser(id:any){
-        this.router.navigate(['user-edit',id])
-    }
-    openModal(template: TemplateRef<any>) {
-        this.modalRef = this.modalService.show(template);
+ 
+    openModal(template:TemplateRef<any>) {
+        this.modalRef=this.modalService.show(template);
+      }
+      ngOnInit(){
+
       }
     getusers(){
         var that=this;
@@ -32,17 +32,17 @@ export class UsersComponent {
         
     }
     onselect(event){
-        var self=this;
-        self.info=event;
-        console.log(self.info);
-        if(self.info){
-            self.users=self.data.Userdata.filter(function(val,index){
-                return val.id==self.info.id
+        var that=this;
+        that.info=event;
+        console.log(that.info);//check the info
+        if(that.info){
+            that.users=that.data.Userdata.filter(function(val,index){
+                return val.id==that.info.id
             })
 
         }
         else{
-            self.users=self.data.Userdata;
+            that.users=that.data.Userdata;
         }
     }
    

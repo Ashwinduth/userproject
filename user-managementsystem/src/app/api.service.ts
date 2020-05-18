@@ -14,20 +14,16 @@ export class Apiservice {
             token:'ashwinxyz123'
         },
         {
-            username:'rocky',
+            username:'admin',
             password:'1234',
-            token:'rockyxyz123'
+            token:'adminxyz123'
         },
-        {
-            username:'test',
-            password:'1234',
-            token:'testxyz123'
-        }
+  
     ]
     validateuser(username,password) {
         
-        var buffer= this.manualdata.filter(use =>{
-            if(use.username === username && use.password === password){
+        var buffer= this.manualdata.filter(val =>{
+            if(val.username === username && val.password === password){
                 return true;
             }
 
@@ -44,7 +40,7 @@ export class Apiservice {
     fetchuser(){
         return this.http.get("https://jsonplaceholder.typicode.com/users");
     }
-    fetchusers(id:any){
+    fetchusers(id){
         return this.http.get("https://jsonplaceholder.typicode.com/users/"+id)
     }
 }

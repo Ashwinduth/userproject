@@ -1,5 +1,7 @@
 <div class="container">
-    <ng-select class="custom my-5 w-25 box" [items]=users bindLabel="name" bindValue="id" (change)="onselect($event)"></ng-select>
+    <ng-select class="custom my-5 w-25 box" [items]=users bindLabel="name" bindValue="id" placeholder="search by name" (change)="onselect($event)">
+
+    </ng-select>   
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -19,27 +21,31 @@
                 <td>
                     <button class=" btn btn-outline-primary" (click)="edituser(user.id)" >Edit</button>
                     <button class=" btn btn-outline-success ml-2" (click)="openModal(template)">view</button>
-                    <ng-template #template>
-                        <div class="modal-header">
-                            <h4 class="modal-title pull-left">This is {{user.name}}</h4>
-                            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                    
+                    <ng-template #template >
+                        <div class="modal-header text-white bg-dark">
+                          <h4 class="modal-title pull-left bg-dark">This is {{user.name}}</h4>
+                          <button type="button" class="close pull-right text-danger" aria-label="Close" (click)="modalRef.hide()">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
                         </div>
-                        <div class="modal-body">
-                            <ul>
-                                <li class="bg-warning">Student Id is:{{user.id}}</li>
-                                <li>Student Name is:{{user.name}}</li>
-                                <li class="bg-success">Student Email is:{{user.email}}</li>
-                                <li>Student Username is:{{user.username}}</li>
-                            </ul>  
+                        <div class="modal-body bg-light">
+                            <ul class="list-group">
+                               <li class=" list-group-item">{{user.id}}</li>
+                               <li class=" list-group-item">{{user.username}}</li>
+                               <li  class=" list-group-item">{{user.email}}</li>
+                               <li class=" list-group-item">{{user.phone}}</li>
+                               <li class=" list-group-item">{{user.address.city}}</li>
+                               <li class=" list-group-item text-info ">{{user.website}}</li>
+                            </ul>
+                            <div class="d-flex justify-content-end my-3">
+                                <button class="btn btn-primary  text-white" routerLink="/view{{user.id}} ">GOTO USERCARD</button>
+                            </div>
                         </div>
                     </ng-template>
                 </td>
-            </tr>  
-           
+            </tr>
         </tbody>
-        
     </table>
 </div>
 
