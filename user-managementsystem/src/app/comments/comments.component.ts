@@ -51,6 +51,11 @@ export class CommentsComponent {
         this.pageresponse = res;
       })
     }
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> 3ab13876a46f09f1274297de57659b8098b8754a
 
     if (this.page == 5) {
       this.servicepage.paginationuser('_page=5&_limit=15').subscribe(res => {
